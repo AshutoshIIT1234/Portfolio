@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+.env
+*.log
+
+# Build directories
+build/
+dist/
+
+# Local development cache
+.cache/
+
+# Editor directories
+.vscode/
+.idea/
+.vercel
