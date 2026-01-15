@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Developer Portfolio</title>
     <link rel="stylesheet" href="./styles.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
+
 <body>
     <div class="content">
         <nav class="navbar">
             <div class="logo">AT</div>
             <div class="nav-links">
                 <a href="#about-me" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
-                <a href="#resume" class="nav-link">Resume</a>
-                <a href="#experience" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="mobile-menu-btn">
@@ -27,51 +30,159 @@
             </div>
         </nav>
         <section class="hero">
-            <h1 class="hero-title">Ashutosh kumar Tripathi</h1>
-            <p class="hero-subtitle">AI Developer | ML/DL & GenAI Enthusiast</p>
+            <h1 class="hero-title">Ashutosh Kumar Tripathi</h1>
+            <p class="hero-subtitle">Full Stack Developer | AI & Data Analytics Student</p>
         </section>
         <section class="about-me" id="about-me">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p> Hi there! I'm Ashutosh Kumar Tripathi, a dedicated and curious 2nd-year B.Sc. student in Computer Science and Data Analytics at the Indian Institute of Technology Patna. My academic journey has been a thrilling exploration into the core concepts that drive modern technology and data-driven insights.
-                    <br /><br />
-                    My curriculum at IIT Patna provides a robust foundation in areas like programming, data structures, algorithms, and statistics. However, my true passion ignites when I delve into the more specialized domains of Machine Learning and Deep Learning. I'm actively building a strong understanding of various ML algorithms, neural network architectures, and their practical implementations. Whether it's predictive modeling, image recognition, or natural language processing, I'm constantly seeking to expand my expertise in these areas
-                  <br /><br />
-                  Furthermore, I am a genuine enthusiast of Generative AI. The ability of AI to create novel content, from art and music to sophisticated text, captivates my imagination.  I'm always on the lookout for innovative projects that push the boundaries of what Generative AI can achieve.
-                <br /><br />
-                This portfolio serves as a testament to my learning journey, showcasing the projects I've undertaken, the skills I've acquired, and my unwavering commitment to contributing to the exciting future of artificial intelligence and data science. I'm eager to connect with like-minded individuals and explore opportunities where I can apply my growing knowledge and contribute to impactful solutions.
-                </p>
+                <p>I'm Ashutosh Kumar Tripathi, a dedicated and curious 3rd-year B.Sc. student in Computer Science and
+                    Data Analytics at the Indian Institute of Technology Patna. My academic journey has been a thrilling
+                    exploration into the core concepts that drive modern technology and data-driven insights.</p>
+                <br>
+                <p>My curriculum at IIT Patna provides a robust foundation in areas like programming, data structures,
+                    algorithms, and statistics. However, my true passion ignites when I delve into the more specialized
+                    domains of Machine Learning and Deep Learning.</p>
             </div>
         </section>
-       
+
+        <section class="education" id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="project-card">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Science in Computer Science And Data Analysis</h3>
+                        <p style="color: #4ecdc4; margin-bottom: 0.5rem;">Indian Institute of Technology Patna (IIT
+                            PATNA) | Aug 2023 - July 2026</p>
+                        <p>CPI: 8.6</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="timeline-content">
+                        <h3>Intermediate</h3>
+                        <p style="color: #4ecdc4; margin-bottom: 0.5rem;">Pt. Ramchandra Mishra Inter College -
+                            Vindyachal | July 2023</p>
+                        <p>Percentage: 72%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="project-card">
+                    <div class="timeline-content">
+                        <h3>Full Stack Intern</h3>
+                        <p style="color: #4ecdc4; margin-bottom: 0.5rem;">Nextute | Aug 2024 – Oct 2024</p>
+                        <ul style="color: rgba(255, 255, 255, 0.7); margin-left: 1.5rem; margin-top: 1rem;">
+                            <li>Built and deployed dynamic web modules using Next.js, React, and Express.js</li>
+                            <li>Integrated NeonDB for efficient database management and real-time data updates.</li>
+                            <li>Collaborated with backend team to design scalable REST APIs and improve performance</li>
+                            <li>Enhanced UI responsiveness and implemented reusable components for faster development
+                                cycles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="timeline">
+                <div class="project-card ">
+                    <div class="timeline-content">
+                        <h3>Sahayak AI (AI-Powered EdTech Platform)</h3>
+                        <p>Developed an intelligent platform for the Indian education sector, trusted by 5,000+
+                            educators, that automates critical tasks (lesson planning, assessment creation, paper
+                            digitization) to save an average of 10+ hours per week.</p>
+                        <div class="project-card-buttons">
+                            <button onclick="window.open('https://vasudev-sahayak-dev.vercel.app', '_blank')">Live
+                                Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="timeline-content">
+                        <h3>TaskFlow AI: AI-Powered Project Management Platform</h3>
+                        <p>Developed and deployed an AI-first Project Management (PM) application that leverages machine
+                            learning to automate workflows, providing intelligent task prioritization, automated status
+                            updates, and predictive risk reporting to enhance team productivity.</p>
+                        <div class="project-card-buttons">
+                            <button onclick="window.open('https://taskflow-ai-iota.vercel.app', '_blank')">Live
+                                Link</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card ">
+                    <div class="timeline-content">
+                        <h3> JARVIS - Personal Agent</h3>
+                        <p>A voice-activated assistant integrating multiple productivity platforms with natural
+                            language processing capabilities.</p>
+                        <div class="project-card-buttons">
+                            <button onclick="window.open('https://github.com/AshutoshIIT1234/jarvis')">Github</button>
+                            <!-- <button onclick="window.open('abcd.com', '_blank')">Live link</button> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="timeline-content">
+                        <h3>Youtube-Comment-Sentiment-Analyzer</h3>
+                        <p>A Streamlit application that analyzes the sentiment of YouTube video comments using machine
+                            learning. The app fetches comments from YouTube videos and performs sentiment analysis to
+                            classify them as positive or negative.</p>
+                        <div class="project-card-buttons">
+                            <button
+                                onclick="window.open('https://github.com/AshutoshIIT1234/youtube-comment-sentiment-analyzer')">Github</button>
+                            <button
+                                onclick="window.open('https://huggingface.co/spaces/AshuMlcoder/Youtube_Sentiment-Analyzer')">Live
+                                link</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="project-card ">
+                    <div class="timeline-content">
+                        <h3>Anime-Recommendation-System</h3>
+                        <p>This machine learning project provides anime recommendations based on content similarity
+                            analysis of anime synopses. The system uses TF-IDF vectorization and cosine similarity to
+                            suggest similar titles from a dataset of over 16,000 anime entries also i made Streamlit ui
+                            for user interactivity</p>
+                        <div class="project-card-buttons">
+                            <button
+                                onclick="window.open('https://github.com/AshutoshIIT1234/anime-recommendation-system')">Github</button>
+                            <button
+                                onclick="window.open('https://huggingface.co/spaces/AshuMlcoder/Anime-Recommendation-System')">Live
+                                link</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="skills" id="skills">
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Machine Learning</h3>
+                    <h3>AI & Machine Learning</h3>
                     <ul>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>keras</li>
-                        <li>NLP & Transformers</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Deep Learning</h3>
-                    <ul>
-                        <li>Neural Networks</li>
-                        <li>CNN & RNN</li>
-                        <li>Transfer Learning</li>
-                        <li>Model Optimization</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>GenAI & Tools</h3>
-                    <ul>
+                        <li>Neural Networks (CNN, RNN)</li>
+                        <li>Scikit-learn, PyTorch, Keras</li>
                         <li>LLMs & GPT Models</li>
-                        <li>Knowledge of pre-trained models (hugging Face)</li>
                         <li>ADK Agents</li>
-                        <li>RAG Systems</li>
+                        <li>Hugging Face Pre-trained Models</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Development</h3>
+                    <ul>
+                        <li>React & React-Native (App Development)</li>
+                        <li>Next.js</li>
+                        <li>Express.js</li>
+                        <li>NeonDB (PostgreSQL)</li>
+                        <li>three.js</li>
+                        <li>Node.js</li>
                     </ul>
                 </div>
             </div>
@@ -82,49 +193,9 @@
             <div class="resume-content">
                 <p>Download my resume to learn more about my experience, education, and qualifications.</p>
                 <div class="project-card button">
-                    <button onclick="window.open('./assets/resume.pdf', '_blank')" class="download-btn">Download Resume </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="project" id="experience">
-            <h2 class="section-title">Projects</h2>
-            <div class="timeline">
-                <div class="project-card ">
-                    <div class="timeline-content">
-                        <h3> JARVIS - Personal Agent</h3>
-                       
-                        <p>A A voice-activated assistant integrating multiple productivity platforms with natural language processing capabilities.</p>
-                        <div class="project-card-buttons">
-                            <button onclick="window.open('https://github.com/AshutoshIIT1234/jarvis')">Github</button>
-                            <button onclick="window.open('abcd.com', '_blank')">Live link</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="timeline-content">
-                        <h3>Youtube-Comment-Sentiment-Analyzer</h3>
-                      
-                        <p>A Streamlit application that analyzes the sentiment of YouTube video comments using machine learning. The app fetches comments from YouTube videos and performs sentiment analysis to classify them as positive or negative.</p>
-                        <div class="project-card-buttons">
-                            <button onclick="window.open('https://github.com/AshutoshIIT1234/youtube-comment-sentiment-analyzer')">Github</button>
-                            <button onclick="window.open('https://huggingface.co/spaces/AshuMlcoder/Youtube_Sentiment-Analyzer')">Live link</button>
-                        </div>
-                    
-                    </div>
-                </div>
-                <div class="project-card ">
-                    <div class="timeline-content">
-                        <h3>Anime-Recommendation-System</h3>
-                      
-                       
-                        <p>This machine learning project provides anime recommendations based on content similarity analysis of anime synopses. The system uses TF-IDF vectorization and cosine similarity to suggest similar titles from a dataset of over 16,000 anime entries also i made Streamlit ui for user interactivity</p>
-                        <div class="project-card-buttons">
-                            <button onclick="window.open('https://github.com/AshutoshIIT1234/anime-recommendation-system')">Github</button>
-                            <button onclick="window.open('https://huggingface.co/spaces/AshuMlcoder/Anime-Recommendation-System')">Live link</button>
-                        </div>
-                    
-                    </div>
+                    <button onclick="window.open('./assets/Ashutosh resume.pdf', '_blank')"
+                        class="download-btn">Download Resume
+                    </button>
                 </div>
             </div>
         </section>
@@ -134,11 +205,13 @@
             <div class="contact-content">
                 <p>Ready to collaborate on innovative AI solutions? Let's create something amazing together!</p>
                 <div class="contact-links">
-                    <a href="mailto:ai.developer@email.com" class="contact-link">tripathiashu342@gmail.com</a>
+                    <a href="mailto:ashutosh_2312res192@iitp.ac.in"
+                        class="contact-link">ashutosh_2312res192@iitp.ac.in</a>
                     <a href="https://github.com/AshutoshIIT1234" class="contact-link">GitHub</a>
-                    <a href="https://www.linkedin.com/in/ashutosh-kumar-tripathi-926308237/" class="contact-link">LinkedIn</a>
-                    <a href="tel:+918787262605" class="contact-link">Phone: +91 8787262605</a>
-                    <span class="contact-link">Address: Mirzapur Uttar Pradesh-231001</span>
+                    <a href="https://www.linkedin.com/in/ashutosh-kumar-tripathi-926308237"
+                        class="contact-link">LinkedIn</a>
+                    <a href="tel:+918787262605" class="contact-link">+91 8787262605</a>
+                    <span class="contact-link">Mirzapur, UP</span>
                 </div>
             </div>
         </section>
@@ -147,4 +220,5 @@
     <script type="module" src="/src/three-scene.js"></script>
     <!-- <script src="./three-scene.js" type="module"></script> -->
 </body>
+
 </html>
