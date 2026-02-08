@@ -4,221 +4,925 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Developer Portfolio</title>
+    <meta name="description"
+        content="Ashutosh Kumar Tripathi - Full Stack Developer with AI & Machine Learning expertise. Building production-ready systems that solve real-world problems.">
+    <meta name="keywords"
+        content="Full Stack Developer, AI Engineer, Machine Learning, React, Next.js, Python, Deep Learning">
+    <meta name="author" content="Ashutosh Kumar Tripathi">
+    <title>Ashutosh Kumar Tripathi | AI + Full Stack Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="./styles.css">
 
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-    <div class="content">
-        <nav class="navbar">
-            <div class="logo">AT</div>
+    <!-- Three.js Canvas Container -->
+    <div id="three-container"></div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <span class="logo-text">AT</span>
+                <span class="logo-dot"></span>
+            </a>
             <div class="nav-links">
-                <a href="#about-me" class="nav-link">About</a>
-                <a href="#education" class="nav-link">Education</a>
+                <a href="#about" class="nav-link">About</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#activity" class="nav-link">Activity</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <div class="mobile-menu-btn">
+            <a href="./assets/Ashutosh resume.pdf" target="_blank" class="nav-cta">
+                <span>Resume</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                </svg>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-        </nav>
-        <section class="hero">
-            <h1 class="hero-title">Ashutosh Kumar Tripathi</h1>
-            <p class="hero-subtitle">Full Stack Developer | AI & Data Analytics Student</p>
-        </section>
-        <section class="about-me" id="about-me">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I'm Ashutosh Kumar Tripathi, a dedicated and curious 3rd-year B.Sc. student in Computer Science and
-                    Data Analytics at the Indian Institute of Technology Patna. My academic journey has been a thrilling
-                    exploration into the core concepts that drive modern technology and data-driven insights.</p>
-                <br>
-                <p>My curriculum at IIT Patna provides a robust foundation in areas like programming, data structures,
-                    algorithms, and statistics. However, my true passion ignites when I delve into the more specialized
-                    domains of Machine Learning and Deep Learning.</p>
-            </div>
-        </section>
+            </button>
+        </div>
+    </nav>
 
-        <section class="education" id="education">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="project-card">
-                    <div class="timeline-content">
-                        <h3>Bachelor of Science in Computer Science And Data Analysis</h3>
-                        <p style="color: #4ecdc4; margin-bottom: 0.5rem;">Indian Institute of Technology Patna (IIT
-                            PATNA) | Aug 2023 - July 2026</p>
-                        <p>CPI: 8.6</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="timeline-content">
-                        <h3>Intermediate</h3>
-                        <p style="color: #4ecdc4; margin-bottom: 0.5rem;">Pt. Ramchandra Mishra Inter College -
-                            Vindyachal | July 2023</p>
-                        <p>Percentage: 72%</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="experience" id="experience">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-                <div class="project-card">
-                    <div class="timeline-content">
-                        <h3>Full Stack Intern</h3>
-                        <p style="color: #4ecdc4; margin-bottom: 0.5rem;">Nextute | Aug 2024 – Oct 2024</p>
-                        <ul style="color: rgba(255, 255, 255, 0.7); margin-left: 1.5rem; margin-top: 1rem;">
-                            <li>Built and deployed dynamic web modules using Next.js, React, and Express.js</li>
-                            <li>Integrated NeonDB for efficient database management and real-time data updates.</li>
-                            <li>Collaborated with backend team to design scalable REST APIs and improve performance</li>
-                            <li>Enhanced UI responsiveness and implemented reusable components for faster development
-                                cycles</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="project" id="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="timeline">
-                <div class="project-card ">
-                    <div class="timeline-content">
-                        <h3>Sahayak AI (AI-Powered EdTech Platform)</h3>
-                        <p>Developed an intelligent platform for the Indian education sector, trusted by 5,000+
-                            educators, that automates critical tasks (lesson planning, assessment creation, paper
-                            digitization) to save an average of 10+ hours per week.</p>
-                        <div class="project-card-buttons">
-                            <button onclick="window.open('https://vasudev-sahayak-dev.vercel.app', '_blank')">Live
-                                Link</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="timeline-content">
-                        <h3>TaskFlow AI: AI-Powered Project Management Platform</h3>
-                        <p>Developed and deployed an AI-first Project Management (PM) application that leverages machine
-                            learning to automate workflows, providing intelligent task prioritization, automated status
-                            updates, and predictive risk reporting to enhance team productivity.</p>
-                        <div class="project-card-buttons">
-                            <button onclick="window.open('https://taskflow-ai-iota.vercel.app', '_blank')">Live
-                                Link</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card ">
-                    <div class="timeline-content">
-                        <h3> JARVIS - Personal Agent</h3>
-                        <p>A voice-activated assistant integrating multiple productivity platforms with natural
-                            language processing capabilities.</p>
-                        <div class="project-card-buttons">
-                            <button onclick="window.open('https://github.com/AshutoshIIT1234/jarvis')">Github</button>
-                            <!-- <button onclick="window.open('abcd.com', '_blank')">Live link</button> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="timeline-content">
-                        <h3>Youtube-Comment-Sentiment-Analyzer</h3>
-                        <p>A Streamlit application that analyzes the sentiment of YouTube video comments using machine
-                            learning. The app fetches comments from YouTube videos and performs sentiment analysis to
-                            classify them as positive or negative.</p>
-                        <div class="project-card-buttons">
-                            <button
-                                onclick="window.open('https://github.com/AshutoshIIT1234/youtube-comment-sentiment-analyzer')">Github</button>
-                            <button
-                                onclick="window.open('https://huggingface.co/spaces/AshuMlcoder/Youtube_Sentiment-Analyzer')">Live
-                                link</button>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="project-card ">
-                    <div class="timeline-content">
-                        <h3>Anime-Recommendation-System</h3>
-                        <p>This machine learning project provides anime recommendations based on content similarity
-                            analysis of anime synopses. The system uses TF-IDF vectorization and cosine similarity to
-                            suggest similar titles from a dataset of over 16,000 anime entries also i made Streamlit ui
-                            for user interactivity</p>
-                        <div class="project-card-buttons">
-                            <button
-                                onclick="window.open('https://github.com/AshutoshIIT1234/anime-recommendation-system')">Github</button>
-                            <button
-                                onclick="window.open('https://huggingface.co/spaces/AshuMlcoder/Anime-Recommendation-System')">Live
-                                link</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills" id="skills">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>AI & Machine Learning</h3>
-                    <ul>
-                        <li>Neural Networks (CNN, RNN)</li>
-                        <li>Scikit-learn, PyTorch, Keras</li>
-                        <li>LLMs & GPT Models</li>
-                        <li>ADK Agents</li>
-                        <li>Hugging Face Pre-trained Models</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Web Development</h3>
-                    <ul>
-                        <li>React & React-Native (App Development)</li>
-                        <li>Next.js</li>
-                        <li>Express.js</li>
-                        <li>NeonDB (PostgreSQL)</li>
-                        <li>three.js</li>
-                        <li>Node.js</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="resume" id="resume">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-content">
-                <p>Download my resume to learn more about my experience, education, and qualifications.</p>
-                <div class="project-card button">
-                    <button onclick="window.open('./assets/Ashutosh resume.pdf', '_blank')"
-                        class="download-btn">Download Resume
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-content">
-                <p>Ready to collaborate on innovative AI solutions? Let's create something amazing together!</p>
-                <div class="contact-links">
-                    <a href="mailto:ashutosh_2312res192@iitp.ac.in"
-                        class="contact-link">ashutosh_2312res192@iitp.ac.in</a>
-                    <a href="https://github.com/AshutoshIIT1234" class="contact-link">GitHub</a>
-                    <a href="https://www.linkedin.com/in/ashutosh-kumar-tripathi-926308237"
-                        class="contact-link">LinkedIn</a>
-                    <a href="tel:+918787262605" class="contact-link">+91 8787262605</a>
-                    <span class="contact-link">Mirzapur, UP</span>
-                </div>
-            </div>
-        </section>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#activity" class="mobile-nav-link">Activity</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <a href="./assets/Ashutosh resume.pdf" target="_blank" class="mobile-nav-cta">Download Resume</a>
+        </div>
     </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    <span>Available for opportunities</span>
+                </div>
+                <h1 class="hero-title">
+                    I build <span class="gradient-text">AI-powered systems</span><br>
+                    that solve real-world problems.
+                </h1>
+                <p class="hero-subtitle">
+                    Full Stack Developer with strong AI & Machine Learning experience,<br class="hide-mobile">
+                    focused on building production-ready, scalable systems.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View Projects</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="./assets/Ashutosh_Resume.pdf" target="_blank" download class="btn btn-secondary">
+                        <span>Download Resume</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="hero-domains">
+                    <div class="domain-tag" data-domain="ai">
+                        <span class="domain-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                                <path
+                                    d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+                            </svg>
+                        </span>
+                        <span>AI & Machine Learning</span>
+                    </div>
+                    <div class="domain-tag" data-domain="backend">
+                        <span class="domain-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </span>
+                        <span>Backend Systems</span>
+                    </div>
+                    <div class="domain-tag" data-domain="frontend">
+                        <span class="domain-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+                                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                                <path
+                                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z" />
+                            </svg>
+                        </span>
+                        <span>Frontend Engineering</span>
+                    </div>
+                    <div class="domain-tag" data-domain="data">
+                        <span class="domain-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3v18h18" />
+                                <path d="M18 17V9" />
+                                <path d="M13 17V5" />
+                                <path d="M8 17v-3" />
+                            </svg>
+                        </span>
+                        <span>Data & Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">01</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-intro">
+                            <p class="about-lead">
+                                I'm a <strong>3rd-year B.Sc. student</strong> in Computer Science and Data Analytics
+                                at <strong>IIT Patna</strong>, passionate about building AI systems that make a real
+                                impact.
+                            </p>
+                        </div>
+                        <div class="about-details">
+                            <div class="about-card">
+                                <div class="about-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                                        <path d="M9 18h6" />
+                                        <path d="M10 22h4" />
+                                    </svg>
+                                </div>
+                                <h3>Problem Solver</h3>
+                                <p>I approach challenges with first-principles thinking, breaking down complex problems
+                                    into elegant solutions.</p>
+                            </div>
+                            <div class="about-card">
+                                <div class="about-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                                        <path
+                                            d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+                                    </svg>
+                                </div>
+                                <h3>Product Thinker</h3>
+                                <p>Not just code - I build products that users love. Every feature is designed with the
+                                    end user in mind.</p>
+                            </div>
+                            <div class="about-card">
+                                <div class="about-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path d="M12 2v2" />
+                                        <path d="M12 20v2" />
+                                        <path d="m4.93 4.93 1.41 1.41" />
+                                        <path d="m17.66 17.66 1.41 1.41" />
+                                        <path d="M2 12h2" />
+                                        <path d="M20 12h2" />
+                                        <path d="m6.34 17.66-1.41 1.41" />
+                                        <path d="m19.07 4.93-1.41 1.41" />
+                                    </svg>
+                                </div>
+                                <h3>AI + Engineering</h3>
+                                <p>Bridging the gap between cutting-edge AI research and production-ready systems that
+                                    scale.</p>
+                            </div>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">8.6</span>
+                                <span class="stat-label">CPI at IIT Patna</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">5K+</span>
+                                <span class="stat-label">Users Impacted</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects Built</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">02</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <div class="experience-timeline">
+                    <div class="timeline-track"></div>
+
+                    <div class="experience-item" data-year="2024">
+                        <div class="experience-marker">
+                            <div class="marker-dot"></div>
+                            <div class="marker-year">2024</div>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-company">
+                                    <h3>Nextute</h3>
+                                    <span class="experience-type">Internship</span>
+                                </div>
+                                <span class="experience-duration">Aug 2024 – Oct 2024</span>
+                            </div>
+                            <h4 class="experience-role">Full Stack Intern</h4>
+                            <ul class="experience-highlights">
+                                <li>Built and deployed dynamic web modules using Next.js, React, and Express.js</li>
+                                <li>Integrated NeonDB for efficient database management and real-time data updates</li>
+                                <li>Collaborated with backend team to design scalable REST APIs and improve performance
+                                </li>
+                                <li>Enhanced UI responsiveness and implemented reusable components for faster
+                                    development</li>
+                            </ul>
+                            <div class="experience-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Express.js</span>
+                                <span class="tech-tag">NeonDB</span>
+                                <span class="tech-tag">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item" data-year="2023">
+                        <div class="experience-marker">
+                            <div class="marker-dot"></div>
+                            <div class="marker-year">2023</div>
+                        </div>
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-company">
+                                    <h3>IIT Patna</h3>
+                                    <span class="experience-type">Education</span>
+                                </div>
+                                <span class="experience-duration">Aug 2023 – Present</span>
+                            </div>
+                            <h4 class="experience-role">B.Sc. in Computer Science & Data Analytics</h4>
+                            <ul class="experience-highlights">
+                                <li>Maintaining a strong CPI of 8.6</li>
+                                <li>Focused on Machine Learning, Deep Learning, and Data Analytics</li>
+                                <li>Active participation in coding competitions and hackathons</li>
+                                <li>Building real-world projects alongside academic curriculum</li>
+                            </ul>
+                            <div class="experience-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Deep Learning</span>
+                                <span class="tech-tag">Data Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">03</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-subtitle">A showcase of systems I've designed and built</p>
+                </div>
+
+                <!-- Flagship Project -->
+                <div class="flagship-project">
+                    <div class="project-visual">
+                        <div class="project-glow"></div>
+                        <div class="project-preview">
+                            <div class="preview-header">
+                                <div class="preview-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="preview-url">sahayak-ai.vercel.app</span>
+                            </div>
+                            <div class="preview-content">
+                                <div class="preview-icon">🎓</div>
+                                <span class="preview-text">AI-Powered EdTech Platform</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge">
+                            <span class="badge-star">⭐</span>
+                            <span>Flagship Project</span>
+                        </div>
+                        <h3 class="project-title">Sahayak AI</h3>
+                        <p class="project-description">
+                            An intelligent platform for the Indian education sector that automates critical tasks
+                            including lesson planning, assessment creation, and paper digitization.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">5,000+</span>
+                                <span class="metric-label">Educators Trust</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">10+</span>
+                                <span class="metric-label">Hours Saved/Week</span>
+                            </div>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">GPT-4</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://vasudev-sahayak-dev.vercel.app" target="_blank"
+                                class="project-link primary">
+                                <span>View Live</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+                                    <path d="M21 3v5h-5" />
+                                </svg>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://taskflow-ai-iota.vercel.app" target="_blank" aria-label="Live Demo">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="card-title">TaskFlow AI</h3>
+                        <p class="card-description">
+                            AI-first Project Management app with intelligent task prioritization, automated status
+                            updates, and predictive risk reporting.
+                        </p>
+                        <div class="card-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>ML</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 8V4H8" />
+                                    <rect width="16" height="12" x="4" y="8" rx="2" />
+                                    <path d="M2 14h2" />
+                                    <path d="M20 14h2" />
+                                    <path d="M15 13v2" />
+                                    <path d="M9 13v2" />
+                                </svg>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/AshutoshIIT1234/jarvis" target="_blank" aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="card-title">JARVIS</h3>
+                        <p class="card-description">
+                            Personal voice-activated assistant integrating multiple productivity platforms with natural
+                            language processing capabilities.
+                        </p>
+                        <div class="card-tech">
+                            <span>Python</span>
+                            <span>NLP</span>
+                            <span>Speech API</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 3v18h18" />
+                                    <path d="M18 17V9" />
+                                    <path d="M13 17V5" />
+                                    <path d="M8 17v-3" />
+                                </svg>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/AshutoshIIT1234/youtube-comment-sentiment-analyzer"
+                                    target="_blank" aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                    </svg>
+                                </a>
+                                <a href="https://huggingface.co/spaces/AshuMlcoder/Youtube_Sentiment-Analyzer"
+                                    target="_blank" aria-label="Live Demo">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="card-title">YouTube Sentiment Analyzer</h3>
+                        <p class="card-description">
+                            ML-powered app that fetches YouTube comments and performs sentiment analysis to classify
+                            them as positive or negative.
+                        </p>
+                        <div class="card-tech">
+                            <span>Streamlit</span>
+                            <span>Scikit-Learn</span>
+                            <span>NLP</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                    <path d="M5 3v4" />
+                                    <path d="M19 17v4" />
+                                    <path d="M3 5h4" />
+                                    <path d="M17 19h4" />
+                                </svg>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/AshutoshIIT1234/anime-recommendation-system" target="_blank"
+                                    aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                    </svg>
+                                </a>
+                                <a href="https://huggingface.co/spaces/AshuMlcoder/Anime-Recommendation-System"
+                                    target="_blank" aria-label="Live Demo">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Anime Recommendation System</h3>
+                        <p class="card-description">
+                            Content-based recommendation engine using TF-IDF vectorization and cosine similarity on
+                            16,000+ anime entries.
+                        </p>
+                        <div class="card-tech">
+                            <span>Python</span>
+                            <span>TF-IDF</span>
+                            <span>Streamlit</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
+                                </svg>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/AshutoshIIT1234/new-project" target="_blank"
+                                    aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="card-title">Press and Connect</h3>
+                        <p class="card-description">
+                            Interactive introgression webgame app that challenges users with engaging puzzles and
+                            connection-based gameplay mechanics.
+                        </p>
+                        <div class="card-tech">
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+                            <div class="card-links">
+                                <a href="https://github.com/AshutoshIIT1234/droidrun-project" target="_blank"
+                                    aria-label="GitHub">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="card-title">DroidRun Automation</h3>
+                        <p class="card-description">
+                            Automated connection request system powered by DroidRun for streamlined LinkedIn networking
+                            and professional outreach automation.
+                        </p>
+                        <div class="card-tech">
+                            <span>Python</span>
+                            <span>DroidRun</span>
+                            <span>Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">04</span>
+                    <h2 class="section-title">Skill Galaxy</h2>
+                    <p class="section-subtitle">Technologies I use to build systems</p>
+                </div>
+
+                <div class="skills-constellation">
+                    <!-- AI & ML Cluster -->
+                    <div class="skill-cluster" data-cluster="ai">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" />
+                                    <path
+                                        d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" />
+                                    <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4" />
+                                    <path d="M17.599 6.5a3 3 0 0 0 .399-1.375" />
+                                    <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5" />
+                                    <path d="M3.477 10.896a4 4 0 0 1 .585-.396" />
+                                    <path d="M19.938 10.5a4 4 0 0 1 .585.396" />
+                                    <path d="M6 18a4 4 0 0 1-1.967-.516" />
+                                    <path d="M19.967 17.484A4 4 0 0 1 18 18" />
+                                </svg>
+                            </div>
+                            <h3 class="cluster-title">AI & Machine Learning</h3>
+                        </div>
+                        <div class="cluster-skills">
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">PyTorch</span>
+                            </div>
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">Scikit-learn</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">Keras</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">CNN/RNN</span>
+                            </div>
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">LLMs & GPT</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">Hugging Face</span>
+                            </div>
+                            <div class="skill-node" data-level="intermediate">
+                                <span class="skill-name">ADK Agents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Web Development Cluster -->
+                    <div class="skill-cluster" data-cluster="web">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                                    <path d="M2 12h20" />
+                                </svg>
+                            </div>
+                            <h3 class="cluster-title">Web Development</h3>
+                        </div>
+                        <div class="cluster-skills">
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">React</span>
+                            </div>
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">Next.js</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">React Native</span>
+                            </div>
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">Node.js</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">Express.js</span>
+                            </div>
+                            <div class="skill-node" data-level="intermediate">
+                                <span class="skill-name">Three.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Databases Cluster -->
+                    <div class="skill-cluster" data-cluster="tools">
+                        <div class="cluster-header">
+                            <div class="cluster-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <h3 class="cluster-title">Tools & Databases</h3>
+                        </div>
+                        <div class="cluster-skills">
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">Python</span>
+                            </div>
+                            <div class="skill-node" data-level="expert">
+                                <span class="skill-name">JavaScript</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">PostgreSQL</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">NeonDB</span>
+                            </div>
+                            <div class="skill-node" data-level="advanced">
+                                <span class="skill-name">Firebase</span>
+                            </div>
+                            <div class="skill-node" data-level="intermediate">
+                                <span class="skill-name">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Activity Section -->
+        <section id="activity" class="activity">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">05</span>
+                    <h2 class="section-title">GitHub Activity</h2>
+                    <p class="section-subtitle">My open source contributions and coding activity</p>
+                </div>
+
+                <div class="github-activity-wrapper">
+                    <div class="github-profile-card">
+                        <div class="github-avatar">
+                            <img src="https://github.com/AshutoshIIT1234.png" alt="Ashutosh Kumar Tripathi"
+                                loading="lazy">
+                        </div>
+                        <div class="github-info">
+                            <h3 class="github-name">Ashutosh Kumar Tripathi</h3>
+                            <a href="https://github.com/AshutoshIIT1234" target="_blank" class="github-username">
+                                @AshutoshIIT1234
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="github-calendar-container">
+                        <div class="calendar-header">
+                            <span class="calendar-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                                </svg>
+                                Contribution Graph
+                            </span>
+                            <div class="calendar-legend">
+                                <span class="legend-label">Less</span>
+                                <div class="legend-boxes">
+                                    <span class="legend-box" data-level="0"></span>
+                                    <span class="legend-box" data-level="1"></span>
+                                    <span class="legend-box" data-level="2"></span>
+                                    <span class="legend-box" data-level="3"></span>
+                                    <span class="legend-box" data-level="4"></span>
+                                </div>
+                                <span class="legend-label">More</span>
+                            </div>
+                        </div>
+                        <div id="github-calendar" class="github-calendar">
+                            <div class="calendar-loading">
+                                <div class="loading-spinner"></div>
+                                <span>Loading contribution data...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="github-stats">
+                        <div class="github-stat-card">
+                            <div class="stat-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="total-contributions">--</span>
+                                <span class="stat-label">Contributions This Year</span>
+                            </div>
+                        </div>
+                        <div class="github-stat-card">
+                            <div class="stat-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" />
+                                    <circle cx="12" cy="13" r="2" />
+                                    <path d="M14 13h3" />
+                                    <path d="M7 13h3" />
+                                </svg>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="public-repos">--</span>
+                                <span class="stat-label">Public Repositories</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="section-container">
+                <div class="contact-content">
+                    <div class="contact-header">
+                        <span class="section-label">06</span>
+                        <h2 class="contact-title">Let's Build Something Together</h2>
+                        <p class="contact-subtitle">
+                            Ready to collaborate on innovative AI solutions? Whether you're a recruiter,
+                            startup founder, or fellow developer – I'd love to connect.
+                        </p>
+                    </div>
+
+                    <div class="contact-cta">
+                        <a href="mailto:ashutosh_2312res192@iitp.ac.in" class="btn btn-primary btn-large">
+                            <span>Get In Touch</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </a>
+                        <a href="./assets/Ashutosh resume.pdf" target="_blank" class="btn btn-secondary btn-large">
+                            <span>Download Resume</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="contact-links">
+                        <a href="mailto:ashutosh_2312res192@iitp.ac.in" class="contact-link" aria-label="Email">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://github.com/AshutoshIIT1234" target="_blank" class="contact-link"
+                            aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ashutosh-kumar-tripathi-926308237" target="_blank"
+                            class="contact-link" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="tel:+918787262605" class="contact-link" aria-label="Phone">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                            <span>Phone</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">
+                    Designed & Built by <strong>Ashutosh Kumar Tripathi</strong>
+                </p>
+                <p class="footer-year">© 2024</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/three-scene.js"></script>
-    <!-- <script src="./three-scene.js" type="module"></script> -->
 </body>
 
 </html>
