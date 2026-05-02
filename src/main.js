@@ -765,8 +765,6 @@ function initChatbot() {
             chatbotContainer.classList.toggle('active');
             if (chatbotContainer.classList.contains('active')) {
                 chatbotInput.focus();
-                // Play entrance animation
-                animateRobotEntrance();
             }
         });
     }
@@ -787,15 +785,10 @@ function initChatbot() {
         addMessage(message, 'user');
         chatbotInput.value = '';
 
-        // Animate robot thinking
-        animateRobotThinking();
-
         // Generate bot response
         setTimeout(() => {
             const response = generateBotResponse(message);
             addMessage(response, 'bot');
-            // Animate robot response
-            animateRobotResponse();
         }, 500);
     }
 
@@ -833,84 +826,6 @@ function initChatbot() {
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
 
-    // Robot animation functions
-    function animateRobotEntrance() {
-        const avatar = document.querySelector('.chatbot-avatar');
-        if (avatar) {
-            gsap.fromTo(avatar, 
-                { scale: 0.5, rotation: -180 },
-                { scale: 1, rotation: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }
-            );
-        }
-    }
-
-    function animateRobotThinking() {
-        const avatar = document.querySelector('.chatbot-avatar');
-        if (avatar) {
-            gsap.to(avatar, {
-                rotation: 360,
-                duration: 1,
-                ease: 'power2.inOut',
-                repeat: 1,
-                yoyo: true
-            });
-        }
-    }
-
-    function animateRobotResponse() {
-        const avatar = document.querySelector('.chatbot-avatar');
-        if (avatar) {
-            gsap.to(avatar, {
-                scale: 1.2,
-                duration: 0.2,
-                ease: 'power2.out',
-                yoyo: true,
-                repeat: 1
-            });
-        }
-    }
-
-    // Add hover effects to robot
-    const avatar = document.querySelector('.chatbot-avatar');
-    if (avatar) {
-        avatar.addEventListener('mouseenter', () => {
-            gsap.to(avatar, {
-                rotation: 15,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-
-        avatar.addEventListener('mouseleave', () => {
-            gsap.to(avatar, {
-                rotation: 0,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-    }
-
-    // Add interactive effects to toggle button
-    if (chatbotToggle) {
-        chatbotToggle.addEventListener('mouseenter', () => {
-            gsap.to(chatbotToggle, {
-                rotation: 10,
-                scale: 1.1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-
-        chatbotToggle.addEventListener('mouseleave', () => {
-            gsap.to(chatbotToggle, {
-                rotation: 0,
-                scale: 1,
-                duration: 0.3,
-                ease: 'power2.out'
-            });
-        });
-    }
-
     // Generate bot response based on knowledge base
     function generateBotResponse(userMessage) {
         const lowerMessage = userMessage.toLowerCase();
@@ -929,8 +844,9 @@ function initChatbot() {
             web_dev: "Ashutosh is expert in Web Development with React, Next.js, React Native, Node.js, and Express.js. He has experience building full-stack applications with modern frameworks and scalable architectures.",
             
             // Experience
-            experience: "Ashutosh has experience as a Full Stack Intern at Nextute (Aug 2024 – Oct 2024) where he built dynamic web modules using Next.js, React, and Express.js, integrated NeonDB for database management, and designed scalable REST APIs.",
-            internship: "Ashutosh worked as a Full Stack Intern at Nextute from August to October 2024. He built and deployed dynamic web modules, integrated NeonDB for real-time data updates, and collaborated with the backend team to improve performance.",
+            experience: "Ashutosh has extensive experience at Nextute, progressing from Full Stack Intern (Aug 2025 – Dec 2025) to Full Stack Developer (Jan 2026 – March 2026). He built dynamic web modules using Next.js, React, and Express.js, architected NeonDB database schemas, led REST API design discussions, and drove UI/UX improvements through component-driven design systems.",
+            internship: "Ashutosh worked as a Full Stack Intern at Nextute from August to December 2025. He built and deployed dynamic web modules, integrated NeonDB for real-time data updates, collaborated with the backend team on scalable REST APIs, and enhanced UI responsiveness with reusable components.",
+            nextute: "At Nextute, Ashutosh progressed from Full Stack Intern to Full Stack Developer. He spearheaded end-to-end development of production web modules, architected optimized NeonDB schemas for real-time workflows, led API design discussions, and drove UI/UX improvements through component-driven design systems.",
             
             // Projects
             projects: "Ashutosh has built 10+ projects including Sahayak AI (flagship EdTech platform), TaskFlow AI (AI project management), JARVIS (voice assistant), YouTube Sentiment Analyzer, Anime Recommendation System, and more.",
