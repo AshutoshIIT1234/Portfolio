@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initProjectHover();
     initGitHubCalendar();
+    initBlogAnimations();
+    initChatbot();
 });
 
 // ============================================
@@ -709,3 +711,316 @@ window.addEventListener('load', () => {
     // Refresh ScrollTrigger after everything loads
     ScrollTrigger.refresh();
 });
+
+// ============================================
+// BLOG ANIMATIONS
+// ============================================
+
+function initBlogAnimations() {
+    // Blog grid animation
+    gsap.to('.blog-grid', {
+        scrollTrigger: {
+            trigger: '.blog-grid',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out'
+    });
+
+    // Blog cards stagger animation
+    gsap.utils.toArray('.blog-card').forEach((card, i) => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            delay: i * 0.15,
+            ease: 'power3.out'
+        });
+    });
+}
+
+// ============================================
+// CHATBOT FUNCTIONALITY
+// ============================================
+
+function initChatbot() {
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotContainer = document.getElementById('chatbotContainer');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+
+    // Toggle chatbot
+    if (chatbotToggle && chatbotContainer) {
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('active');
+            if (chatbotContainer.classList.contains('active')) {
+                chatbotInput.focus();
+                // Play entrance animation
+                animateRobotEntrance();
+            }
+        });
+    }
+
+    // Close chatbot
+    if (chatbotClose && chatbotContainer) {
+        chatbotClose.addEventListener('click', () => {
+            chatbotContainer.classList.remove('active');
+        });
+    }
+
+    // Send message
+    function sendMessage() {
+        const message = chatbotInput.value.trim();
+        if (!message) return;
+
+        // Add user message
+        addMessage(message, 'user');
+        chatbotInput.value = '';
+
+        // Animate robot thinking
+        animateRobotThinking();
+
+        // Generate bot response
+        setTimeout(() => {
+            const response = generateBotResponse(message);
+            addMessage(response, 'bot');
+            // Animate robot response
+            animateRobotResponse();
+        }, 500);
+    }
+
+    // Send on button click
+    if (chatbotSend) {
+        chatbotSend.addEventListener('click', sendMessage);
+    }
+
+    // Send on Enter key
+    if (chatbotInput) {
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    // Add message to chat
+    function addMessage(text, type) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${type}-message`;
+        
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+        
+        const paragraph = document.createElement('p');
+        paragraph.textContent = text;
+        
+        contentDiv.appendChild(paragraph);
+        messageDiv.appendChild(contentDiv);
+        
+        chatbotMessages.appendChild(messageDiv);
+        
+        // Scroll to bottom
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Robot animation functions
+    function animateRobotEntrance() {
+        const avatar = document.querySelector('.chatbot-avatar');
+        if (avatar) {
+            gsap.fromTo(avatar, 
+                { scale: 0.5, rotation: -180 },
+                { scale: 1, rotation: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }
+            );
+        }
+    }
+
+    function animateRobotThinking() {
+        const avatar = document.querySelector('.chatbot-avatar');
+        if (avatar) {
+            gsap.to(avatar, {
+                rotation: 360,
+                duration: 1,
+                ease: 'power2.inOut',
+                repeat: 1,
+                yoyo: true
+            });
+        }
+    }
+
+    function animateRobotResponse() {
+        const avatar = document.querySelector('.chatbot-avatar');
+        if (avatar) {
+            gsap.to(avatar, {
+                scale: 1.2,
+                duration: 0.2,
+                ease: 'power2.out',
+                yoyo: true,
+                repeat: 1
+            });
+        }
+    }
+
+    // Add hover effects to robot
+    const avatar = document.querySelector('.chatbot-avatar');
+    if (avatar) {
+        avatar.addEventListener('mouseenter', () => {
+            gsap.to(avatar, {
+                rotation: 15,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        avatar.addEventListener('mouseleave', () => {
+            gsap.to(avatar, {
+                rotation: 0,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    }
+
+    // Add interactive effects to toggle button
+    if (chatbotToggle) {
+        chatbotToggle.addEventListener('mouseenter', () => {
+            gsap.to(chatbotToggle, {
+                rotation: 10,
+                scale: 1.1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+
+        chatbotToggle.addEventListener('mouseleave', () => {
+            gsap.to(chatbotToggle, {
+                rotation: 0,
+                scale: 1,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+    }
+
+    // Generate bot response based on knowledge base
+    function generateBotResponse(userMessage) {
+        const lowerMessage = userMessage.toLowerCase();
+        
+        // Knowledge base about Ashutosh Kumar Tripathi
+        const knowledgeBase = {
+            // Personal Information
+            name: "Ashutosh Kumar Tripathi",
+            education: "I'm a 3rd-year B.Sc. student in Computer Science and Data Analytics at IIT Patna, maintaining a strong CPI of 8.6.",
+            location: "I'm currently based in India, studying at IIT Patna.",
+            availability: "Yes, Ashutosh is currently available for opportunities! He's actively looking for full-time roles and internships in AI/ML and Full Stack Development.",
+            
+            // Skills
+            skills: "Ashutosh is proficient in AI & Machine Learning (PyTorch, Scikit-learn, Keras, CNN/RNN, LLMs, Hugging Face), Web Development (React, Next.js, React Native, Node.js, Express.js, Three.js), and Tools & Databases (Python, JavaScript, PostgreSQL, NeonDB, Firebase, Git).",
+            ai_ml: "Ashutosh has strong expertise in AI & Machine Learning, including PyTorch, Scikit-learn, Keras, CNN/RNN architectures, LLMs & GPT, and Hugging Face. He's built multiple AI-powered systems including Sahayak AI, TaskFlow AI, and a YouTube Sentiment Analyzer.",
+            web_dev: "Ashutosh is expert in Web Development with React, Next.js, React Native, Node.js, and Express.js. He has experience building full-stack applications with modern frameworks and scalable architectures.",
+            
+            // Experience
+            experience: "Ashutosh has experience as a Full Stack Intern at Nextute (Aug 2024 – Oct 2024) where he built dynamic web modules using Next.js, React, and Express.js, integrated NeonDB for database management, and designed scalable REST APIs.",
+            internship: "Ashutosh worked as a Full Stack Intern at Nextute from August to October 2024. He built and deployed dynamic web modules, integrated NeonDB for real-time data updates, and collaborated with the backend team to improve performance.",
+            
+            // Projects
+            projects: "Ashutosh has built 10+ projects including Sahayak AI (flagship EdTech platform), TaskFlow AI (AI project management), JARVIS (voice assistant), YouTube Sentiment Analyzer, Anime Recommendation System, and more.",
+            flagship: "Sahayak AI is Ashutosh's flagship project - an intelligent platform for the Indian education sector that automates lesson planning, assessment creation, and paper digitization. It's trusted by 5,000+ educators and saves 10+ hours per week.",
+            sahayak: "Sahayak AI is an AI-powered EdTech platform that automates critical tasks for educators including lesson planning, assessment creation, and paper digitization. Built with React, Next.js, Python, GPT-4, and Firebase.",
+            taskflow: "TaskFlow AI is an AI-first Project Management app with intelligent task prioritization, automated status updates, and predictive risk reporting. Built with React, Node.js, and ML.",
+            
+            // Contact
+            contact: "You can reach Ashutosh via email at ashutosh_2312res192@iitp.ac.in, phone at +91 8787262605, LinkedIn at linkedin.com/in/ashutosh-kumar-tripathi-926308237, or GitHub at github.com/AshutoshIIT1234.",
+            email: "Ashutosh's email is ashutosh_2312res192@iitp.ac.in",
+            phone: "Ashutosh's phone number is +91 8787262605",
+            linkedin: "You can find Ashutosh on LinkedIn: linkedin.com/in/ashutosh-kumar-tripathi-926308237",
+            github: "Ashutosh's GitHub profile is github.com/AshutoshIIT1234",
+            
+            // Resume
+            resume: "You can download Ashutosh's resume from the website. Just click the 'Resume' button in the navigation bar.",
+            
+            // General
+            hello: "Hello! I'm Ashutosh's AI assistant. How can I help you learn more about his skills, experience, or projects?",
+            hi: "Hi there! I'm here to help you learn about Ashutosh. What would you like to know?",
+            thanks: "You're welcome! Feel free to ask if you have any more questions about Ashutosh.",
+            bye: "Goodbye! Feel free to reach out if you have more questions about Ashutosh in the future.",
+            help: "I can help you with information about Ashutosh's skills, experience, projects, education, contact details, and more. Just ask me anything!",
+            
+            // Recruiter specific
+            hire: "Ashutosh would be a great addition to your team! With his strong background in AI/ML and Full Stack Development, experience building production-ready systems, and excellent academic record (8.6 CPI at IIT Patna), he brings both technical expertise and practical problem-solving skills.",
+            why_hire: "Ashutosh combines strong technical skills in AI/ML and Full Stack Development with practical experience building production-ready systems. His flagship project Sahayak AI impacts 5,000+ users, demonstrating his ability to create scalable solutions. With an 8.6 CPI at IIT Patna and experience at Nextute, he's well-equipped to contribute immediately to your team.",
+            salary: "For salary expectations and availability details, please contact Ashutosh directly at ashutosh_2312res192@iitp.ac.in. He's open to discussing opportunities that align with his skills in AI/ML and Full Stack Development.",
+            
+            // Default
+            default: "I'm not sure about that specific question, but I can help you with information about Ashutosh's skills, experience, projects, education, or contact details. What would you like to know?"
+        };
+
+        // Check for keywords in user message
+        if (lowerMessage.includes('name') || lowerMessage.includes('who')) {
+            return knowledgeBase.name;
+        } else if (lowerMessage.includes('education') || lowerMessage.includes('study') || lowerMessage.includes('college') || lowerMessage.includes('university') || lowerMessage.includes('iit')) {
+            return knowledgeBase.education;
+        } else if (lowerMessage.includes('location') || lowerMessage.includes('where') || lowerMessage.includes('based')) {
+            return knowledgeBase.location;
+        } else if (lowerMessage.includes('available') || lowerMessage.includes('opportunity') || lowerMessage.includes('job') || lowerMessage.includes('position')) {
+            return knowledgeBase.availability;
+        } else if (lowerMessage.includes('skill') || lowerMessage.includes('technology') || lowerMessage.includes('tech') || lowerMessage.includes('stack')) {
+            return knowledgeBase.skills;
+        } else if (lowerMessage.includes('ai') || lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
+            return knowledgeBase.ai_ml;
+        } else if (lowerMessage.includes('web') || lowerMessage.includes('frontend') || lowerMessage.includes('backend') || lowerMessage.includes('full stack')) {
+            return knowledgeBase.web_dev;
+        } else if (lowerMessage.includes('experience') || lowerMessage.includes('work') || lowerMessage.includes('intern')) {
+            return knowledgeBase.experience;
+        } else if (lowerMessage.includes('nextute')) {
+            return knowledgeBase.internship;
+        } else if (lowerMessage.includes('project')) {
+            return knowledgeBase.projects;
+        } else if (lowerMessage.includes('flagship') || lowerMessage.includes('best')) {
+            return knowledgeBase.flagship;
+        } else if (lowerMessage.includes('sahayak')) {
+            return knowledgeBase.sahayak;
+        } else if (lowerMessage.includes('taskflow')) {
+            return knowledgeBase.taskflow;
+        } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('connect')) {
+            return knowledgeBase.contact;
+        } else if (lowerMessage.includes('email') || lowerMessage.includes('mail')) {
+            return knowledgeBase.email;
+        } else if (lowerMessage.includes('phone') || lowerMessage.includes('call') || lowerMessage.includes('mobile')) {
+            return knowledgeBase.phone;
+        } else if (lowerMessage.includes('linkedin')) {
+            return knowledgeBase.linkedin;
+        } else if (lowerMessage.includes('github')) {
+            return knowledgeBase.github;
+        } else if (lowerMessage.includes('resume') || lowerMessage.includes('cv')) {
+            return knowledgeBase.resume;
+        } else if (lowerMessage.includes('hello') || lowerMessage.includes('hey')) {
+            return knowledgeBase.hello;
+        } else if (lowerMessage.includes('hi')) {
+            return knowledgeBase.hi;
+        } else if (lowerMessage.includes('thank')) {
+            return knowledgeBase.thanks;
+        } else if (lowerMessage.includes('bye') || lowerMessage.includes('goodbye')) {
+            return knowledgeBase.bye;
+        } else if (lowerMessage.includes('help')) {
+            return knowledgeBase.help;
+        } else if (lowerMessage.includes('hire') || lowerMessage.includes('recruit')) {
+            return knowledgeBase.hire;
+        } else if (lowerMessage.includes('why') && (lowerMessage.includes('hire') || lowerMessage.includes('choose'))) {
+            return knowledgeBase.why_hire;
+        } else if (lowerMessage.includes('salary') || lowerMessage.includes('compensation') || lowerMessage.includes('pay')) {
+            return knowledgeBase.salary;
+        } else {
+            return knowledgeBase.default;
+        }
+    }
+}

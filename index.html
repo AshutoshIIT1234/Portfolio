@@ -45,10 +45,11 @@
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
+                <a href="#blog" class="nav-link">Blog</a>
                 <a href="#activity" class="nav-link">Activity</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <a href="./assets/Ashutosh resume.pdf" target="_blank" class="nav-cta">
+            <a href="./assets/Ashutosh_Resume.pdf" target="_blank" class="nav-cta">
                 <span>Resume</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
@@ -69,6 +70,7 @@
             <a href="#experience" class="mobile-nav-link">Experience</a>
             <a href="#projects" class="mobile-nav-link">Projects</a>
             <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#blog" class="mobile-nav-link">Blog</a>
             <a href="#activity" class="mobile-nav-link">Activity</a>
             <a href="#contact" class="mobile-nav-link">Contact</a>
             <a href="./assets/Ashutosh resume.pdf" target="_blank" class="mobile-nav-cta">Download Resume</a>
@@ -743,11 +745,44 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section id="blog" class="blog">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-label">05</span>
+                    <h2 class="section-title">Latest Blog Post</h2>
+                    <p class="section-subtitle">Thoughts, tutorials, and insights from my journey</p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <div class="blog-category">AI & Computer Vision</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <time class="blog-date">Mar 1, 2026</time>
+                                <span class="blog-read-time">3 min read</span>
+                            </div>
+                            <h3 class="blog-title">The AI Proctor: How I Built a Real-Time Surgical Guardian for the Vision Agents Hackathon</h3>
+                            <p class="blog-excerpt">
+                                Medical errors aren't just statistics; they are preventable tragedies. For the WeMakeDevs Vision Agents Hackathon, I built "Medication Proctor" — an autonomous AI agent that audits safety protocols and provides real-time guidance in surgical environments.
+                            </p>
+                            <p class="blog-excerpt">
+                                Using a powerful stack of Gemini 2.5 Flash, Roboflow, and Stream Video SDK, I solved critical challenges like the hallucination problem, latency optimization, and real-time PPE detection. The result is an AI that doesn't just see — it acts as an autonomous partner in clinical settings.
+                            </p>
+                            <a href="https://medium.com/@tripathiashu342/the-ai-proctor-how-i-built-a-real-time-surgical-guardian-for-the-vision-agents-hackathon-b7f8bee330a4" target="_blank" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <!-- GitHub Activity Section -->
         <section id="activity" class="activity">
             <div class="section-container">
                 <div class="section-header">
-                    <span class="section-label">05</span>
+                    <span class="section-label">06</span>
                     <h2 class="section-title">GitHub Activity</h2>
                     <p class="section-subtitle">My open source contributions and coding activity</p>
                 </div>
@@ -842,7 +877,7 @@
             <div class="section-container">
                 <div class="contact-content">
                     <div class="contact-header">
-                        <span class="section-label">06</span>
+                        <span class="section-label">07</span>
                         <h2 class="contact-title">Let's Build Something Together</h2>
                         <p class="contact-subtitle">
                             Ready to collaborate on innovative AI solutions? Whether you're a recruiter,
@@ -859,7 +894,7 @@
                                 <polyline points="22,6 12,13 2,6" />
                             </svg>
                         </a>
-                        <a href="./assets/Ashutosh resume.pdf" target="_blank" class="btn btn-secondary btn-large">
+                        <a href="./assets/Ashutosh_Resume.pdf" target="_blank" class="btn btn-secondary btn-large">
                             <span>Download Resume</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
@@ -923,6 +958,53 @@
     <!-- Scripts -->
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/three-scene.js"></script>
+    <script src="./oneko/oneko.js"></script>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Toggle chatbot">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+        </button>
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+                        <path d="M12 8a4 4 0 0 0-4 4v4a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a4 4 0 0 0-4-4z" />
+                        <path d="M8 18v2" />
+                        <path d="M16 18v2" />
+                        <path d="M12 18v2" />
+                    </svg>
+                </div>
+                <div class="chatbot-info">
+                    <h3 class="chatbot-name">Ashutosh AI Assistant</h3>
+                    <p class="chatbot-status">Online • Ask me anything</p>
+                </div>
+                <button class="chatbot-close" id="chatbotClose" aria-label="Close chatbot">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <p>Hi! I'm Ashutosh's AI assistant. I can answer questions about his skills, experience, projects, and more. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask about Ashutosh's skills, experience, projects...">
+                <button class="chatbot-send" id="chatbotSend" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
