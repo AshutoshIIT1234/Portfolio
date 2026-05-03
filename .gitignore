@@ -5,7 +5,6 @@ node_modules/
 
 # Build directories
 build/
-dist/
 
 # Local development cache
 .cache/
