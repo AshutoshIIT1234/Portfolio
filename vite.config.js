@@ -1,5 +1,11 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/',  // set base path to root, adjust if deploying under subfolder
+  base: '/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    copyPublicDir: true,
+  },
+  publicDir: 'public',
 });
