@@ -2205,8 +2205,7 @@ section {
     --nav-height: 64px;
   }
 
-  .nav-links,
-  .nav-cta {
+  .nav-links {
     display: none;
   }
 
